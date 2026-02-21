@@ -162,31 +162,6 @@ def calc_edge_friction(
         'net_amount': net_amount,
     }
 
-def calc_pxu_eit_floor(
-    pxu_tax_base: Decimal,
-    eit_rate: Decimal,
-    floor_rate: Decimal = Decimal('0.105')
-) -> tuple[Decimal, Decimal, Decimal]:
-    if pxu_tax_base <= 0:
-        return Decimal('0'), Decimal('0'), Decimal('0')
-    
-    pxu_tax_base = _round(pxu_tax_base)
-    eit_rate = _round(eit_rate)
-    floor_rate = _round(floor_rate)
-    
-    actual_eit = pxu_tax_base * eit_rate
-    actual_eit = _round(actual_eit)
-    
-    floor_eit = pxu_tax_base * floor_rate
-    floor_eit = _round(floor_eit)
-    
-    if actual_eit < floor_eit:
-        topup = floor_eit - actual_eit
-        topup = _round(topup)
-        return topup, floor_eit, floor_rate
-    else:
-        return Decimal('0'), actual_eit, eit_rate
-
 def calc_comprehensive_income_tax(
     salary: Decimal,
     bonus: Decimal,

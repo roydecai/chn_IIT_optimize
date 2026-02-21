@@ -33,7 +33,6 @@
     * **综合所得累进税率:** 3% - 45% 累进税率适用于综合所得（工资薪金所得、劳务所得）。
     * **工资薪金特别奖金计税:** 属于工资薪金的特殊计税规则，以函数形式封装供调用。
     * **SZW 合并计税范围:** 仅对“工资薪金（不含特别奖金计税部分）+ 劳务所得”合并计为综合所得；股息红利所得单独计税，不与综合所得合并。
-    * **10.5% 保底约束:** 适用于 PXU 的企业所得税有效税率保底：若 PXU 的有效税率不足 10.5%，则需补足至 10.5%。
     * **SXP (独立镜像):** 综合所得按 3% - 45% 累进税率；股息红利按 20%；与 SZW 不合并。
 * **税种发生点:** VAT/EIT/PIT 均在发出资金的一边确定并在发出时扣减；不存在单笔同时扣缴 VAT 和 EIT/PIT。
 * **流动性约束:** 任意两个关联主体之间，“税前模式”年度累计转移资金规模上限为 **50 万元**。
@@ -92,7 +91,6 @@
     * `calc_vat(price_gross, vat_rate)`: 价外税 VAT 计算。
     * `calc_surtax(vat_amount, surtax_rate)`: 附加税计算。
     * `calc_edge_friction(sender, receiver, amount, mode, rule_snapshot)`: 计算单边流转的税耗与净额，并执行 `ROUND_HALF_EVEN`。
-    * `calc_pxu_eit_floor(pxu_tax_base, eit_rate, floor_rate=0.105)`: PXU 有效税率 10.5% 保底补足。
     * `Entity` 和 `GlobalState` 类。
 
 ### 第二阶段：正逆向双引擎开发 (Forward & Reverse Engines)

@@ -6,7 +6,6 @@ from backend.services.tax_calculator import (
     calc_vat,
     calc_surtax,
     calc_edge_friction,
-    calc_pxu_eit_floor,
     calc_comprehensive_income_tax,
 )
 
@@ -17,6 +16,5 @@ __all__ = [
     'calc_vat',
     'calc_surtax',
     'calc_edge_friction',
-    'calc_pxu_eit_floor',
     'calc_comprehensive_income_tax',
 ]

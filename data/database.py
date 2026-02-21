@@ -80,7 +80,7 @@ def init_db():
 def seed_data(cursor):
     companies = [
         ("PXA", "PXA公司", 1, "company", 0.06, 0.12, 0.25, None, 1, None, "资金源头1"),
-        ("PXU", "PXU公司", 1, "company", 0.06, 0.12, 0.25, None, 1, None, "资金源头2 - 10.5%保底"),
+        ("PXU", "PXU公司", 1, "company", 0.06, 0.12, 0.25, None, 1, None, "资金源头2"),
         ("KKG", "KKG公司", 2, "company", 0.06, 0.12, 0.25, None, 1, "PXA", "中间公司"),
         ("PYU", "PYU公司", 2, "company", 0.06, 0.12, 0.25, None, 1, "PXU", "中间公司"),
         ("HHY", "HHY合伙", 3, "partnership", None, None, None, None, 0, "KKG", "Pass-through实体"),
